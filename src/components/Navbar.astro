@@ -1,0 +1,105 @@
+---
+
+---
+
+<nav
+  class="bg-surface/80 backdrop-blur-md docked full-width top-0 z-50 sticky border-b border-outline-variant/20 shadow-sm w-full transition-all duration-300 relative"
+>
+  <div
+    class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto"
+  >
+    <a class="flex items-center gap-2" href="#beranda">
+      <img
+        alt="Aurum Teak Logo"
+        class="h-10 w-auto object-contain"
+        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbsKhoq02mawr7dqcgcxwIkiFDcakchnffdKnv-Xd2g61X4lXoOGZjWA2Syb5m4G2CGIHr5sqmdY3IlaAobAbjQFoNb_keJB9BsDLRwLrb9Iv2lTuHpUv44mYX54halXzdlnd1qo1v2hehx9QGHXKZ9bpM_E2Oe7WlCa5mS8DHjZEdD1JqrFJxlypuBapIrZBXVdsq18Xg2hPNVVG7KCy6-4xTdC0bKRWTqUmzPI3N1k4gNxt0_ophbnRFQMSmWuq0BhYlpn4m5A"
+      />
+      <span
+        class="font-headline-md text-headline-md font-bold tracking-tight text-primary"
+        >Aurum Teak</span
+      >
+    </a>
+    <div class="hidden md:flex gap-8 items-center">
+      <a
+        class="text-primary font-bold border-b-2 border-primary pb-1 text-label-sm font-label-sm uppercase tracking-wider"
+        href="#beranda">Beranda</a
+      >
+      <a
+        class="text-on-surface-variant hover:text-primary transition-colors text-label-sm font-label-sm uppercase tracking-wider"
+        href="#tentang">Tentang</a
+      >
+      <a
+        class="text-on-surface-variant hover:text-primary transition-colors text-label-sm font-label-sm uppercase tracking-wider"
+        href="#koleksi">Koleksi</a
+      >
+      <a
+        class="text-on-surface-variant hover:text-primary transition-colors text-label-sm font-label-sm uppercase tracking-wider"
+        href="#keunggulan">Keunggulan</a
+      >
+      <a
+        class="text-on-surface-variant hover:text-primary transition-colors text-label-sm font-label-sm uppercase tracking-wider"
+        href="#kontak">Kontak</a
+      >
+    </div>
+    <a
+      class="hidden md:inline-flex bg-primary-container text-on-primary-container font-label-sm text-label-sm px-6 py-3 border border-outline-variant/30 hover:bg-primary hover:text-on-primary transition-all duration-300 items-center justify-center uppercase tracking-wider"
+      href="#pesan"
+    >
+      Pesan Sekarang
+    </a>
+    <button class="md:hidden text-primary" id="mobile-menu-btn">
+      <span class="material-symbols-outlined text-3xl">menu</span>
+    </button>
+    <!-- Mobile Menu Container -->
+    <div
+      class="absolute top-full left-0 w-full bg-surface border-b border-outline-variant/20 flex-col py-4 hidden shadow-md z-50"
+      id="mobile-menu"
+    >
+    </div>
+  </div>
+</nav>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Mobile Menu Toggle Setup
+    const menuBtn = document.getElementById("mobile-menu-btn");
+    const navLinksContainer = document.getElementById("mobile-menu");
+    const desktopNavLinks = document.querySelector("nav .hidden.md\\:flex");
+
+    if (navLinksContainer && desktopNavLinks && menuBtn) {
+      navLinksContainer.innerHTML = desktopNavLinks.innerHTML;
+
+      // Style mobile links
+      const mobileLinks = navLinksContainer.querySelectorAll("a");
+      mobileLinks.forEach((link) => {
+        link.className =
+          "block px-margin-mobile py-4 text-on-surface-variant hover:text-primary hover:bg-surface-variant/50 transition-colors text-label-sm font-label-sm uppercase tracking-wider border-b border-outline-variant/10";
+      });
+
+      menuBtn.addEventListener("click", () => {
+        navLinksContainer.classList.toggle("hidden");
+        navLinksContainer.classList.toggle("flex");
+      });
+
+      // Smooth Scrolling and close menu on click
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          navLinksContainer.classList.add("hidden");
+          navLinksContainer.classList.remove("flex");
+
+          const targetId = this.getAttribute("href");
+          if (targetId === "#") return;
+
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+    }
+  });
+</script>

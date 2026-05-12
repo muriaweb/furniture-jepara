@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+@theme {
+  --color-outline-variant: #d2c4bb;
+  --color-inverse-primary: #dec1ac;
+  --color-surface-container-highest: #e8e0e5;
+  --color-primary-fixed: #fbddc7;
+  --color-on-tertiary-container: #93ab98;
+  --color-surface: #fff7fb;
+  --color-on-surface-variant: #4e453e;
+  --color-on-error: #ffffff;
+  --color-on-background: #1e1b1e;
+  --color-on-primary: #ffffff;
+  --color-surface-tint: #705a49;
+  --color-surface-container-low: #faf1f6;
+  --color-on-secondary: #ffffff;
+  --color-error: #ba1a1a;
+  --color-on-secondary-fixed-variant: #474836;
+  --color-on-secondary-container: #636451;
+  --color-primary: #322214;
+  --color-inverse-on-surface: #f7eef3;
+  --color-inverse-surface: #332f33;
+  --color-outline: #80756d;
+  --color-background: #fff7fb;
+  --color-primary-container: #4a3728;
+  --color-on-tertiary-fixed: #0b2013;
+  --color-secondary-container: #e1e1c9;
+  --color-surface-bright: #fff7fb;
+  --color-primary-fixed-dim: #dec1ac;
+  --color-on-primary-fixed: #28180b;
+  --color-secondary: #5e604d;
+  --color-surface-container: #f4ecf0;
+  --color-on-tertiary: #ffffff;
+  --color-secondary-fixed: #e4e4cc;
+  --color-tertiary-fixed: #d0e9d4;
+  --color-surface-variant: #e8e0e5;
+  --color-on-error-container: #93000a;
+  --color-on-primary-container: #bba08c;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-dim: #e0d8dc;
+  --color-secondary-fixed-dim: #c8c8b0;
+  --color-on-tertiary-fixed-variant: #364c3c;
+  --color-tertiary: #152a1c;
+  --color-on-surface: #1e1b1e;
+  --color-surface-container-high: #eee6ea;
+  --color-tertiary-container: #2b4031;
+  --color-on-secondary-fixed: #1b1d0e;
+  --color-error-container: #ffdad6;
+  --color-tertiary-fixed-dim: #b4cdb8;
+  --color-on-primary-fixed-variant: #574333;
+
+  --spacing-gutter: 24px;
+  --spacing-unit: 8px;
+  --spacing-margin-desktop: 64px;
+  --spacing-margin-mobile: 20px;
+  --spacing-section-gap: 120px;
+  --spacing-container-max: 1280px;
+
+  --font-headline-lg: "Playfair Display", serif;
+  --font-headline-md: "Playfair Display", serif;
+  --font-body-lg: "Inter", sans-serif;
+  --font-display-lg: "Playfair Display", serif;
+  --font-display-lg-mobile: "Playfair Display", serif;
+  --font-body-md: "Inter", sans-serif;
+  --font-headline-lg-mobile: "Playfair Display", serif;
+  --font-label-sm: "Inter", sans-serif;
+
+  --radius-DEFAULT: 0.125rem;
+  --radius-lg: 0.25rem;
+  --radius-xl: 0.5rem;
+  --radius-full: 0.75rem;
+}
+
+@utility text-headline-lg {
+  font-size: 48px;
+  line-height: 1.2;
+  font-weight: 600;
+}
+@utility text-headline-md {
+  font-size: 32px;
+  line-height: 1.3;
+  font-weight: 500;
+}
+@utility text-body-lg {
+  font-size: 18px;
+  line-height: 1.6;
+  font-weight: 400;
+}
+@utility text-display-lg {
+  font-size: 64px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+@utility text-display-lg-mobile {
+  font-size: 40px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+@utility text-body-md {
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+@utility text-headline-lg-mobile {
+  font-size: 32px;
+  line-height: 1.3;
+  font-weight: 600;
+}
+@utility text-label-sm {
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+}
+
+@layer base {
+  .material-symbols-outlined {
+    font-variation-settings:
+      "FILL" 0,
+      "wght" 400,
+      "GRAD" 0,
+      "opsz" 24;
+  }
+}
